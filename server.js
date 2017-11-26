@@ -4,6 +4,8 @@ const fs = require('fs');
 
 const app = express();
 
+const PORT = process.env.PORT || 3000
+
 // enable templates for 'part' of the website (e.g. header, footer, etc)
 hbs.registerPartials(__dirname + '/views/partials');
 console.log(__dirname + '/views/partials');
@@ -76,6 +78,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3001, () => {
-    console.log('Server available on port 3001. Press ^C to exit.');
+app.listen(PORT, () => {
+    console.log(`Server available on port ${PORT}. Press ^C to exit.`);
 });
